@@ -57,13 +57,22 @@ class BaseModel
     /** @var string Primary key field name */
     protected string $primaryKey = 'id';
     
-    /** @var string Table name for the model */
+    /** 
+     * @var string Table name for the model 
+     * @phpstan-ignore-next-line
+     */
     protected string $table = '';
     
-    /** @var array Field data types for validation */
+    /** 
+     * @var array Field data types for validation 
+     * @phpstan-ignore-next-line
+     */
     protected array $fieldTypes = [];
     
-    /** @var array Required fields for validation */
+    /** 
+     * @var array Required fields for validation 
+     * @phpstan-ignore-next-line
+     */
     protected array $requiredFields = [];
     
     /** @var array Current transaction savepoints */
@@ -106,7 +115,7 @@ class BaseModel
             $this->debugMode = $this->environment === 'development';
             
             // Connect to database if not already connected
-            $this->connectToDatabase();
+            $this->getConnection();
             
             // Set default timezone to Asia/Kolkata for KIIT
             date_default_timezone_set('Asia/Kolkata');
@@ -152,7 +161,7 @@ class BaseModel
                 $dbConfig = \KiitSevaDatabase::getInstance();
                 
                 // Get connection from database configuration
-                self::$connection = $dbConfig->getConnection();
+                self::$connection = $dbConfig->connect();
                 
                 // Configure connection settings
                 self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

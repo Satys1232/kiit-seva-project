@@ -1,0 +1,145 @@
+Generate a comprehensive BaseController class for KIIT SEVA university platform that serves as the foundation for all web request handling with enterprise-level security, professional view management, and robust session control.
+
+📋 COMPREHENSIVE BASECONTROLLER REQUIREMENTS:
+
+🎨 ADVANCED VIEW RENDERING SYSTEM:
+- render($view, $data = [], $layout = 'default') - Master view rendering with layout support
+- renderPartial($view, $data = []) - Render view components without layout
+- renderJSON($data, $status = 200) - JSON API responses with proper headers
+- renderError($errorCode, $message = null) - Professional error page rendering
+- setLayout($layout) - Dynamic layout switching for different page types
+- setTitle($title) - Page title management for SEO optimization
+- setMetaData($key, $value) - Meta tags and SEO data management
+- addBreadcrumb($name, $url = null) - Navigation breadcrumb management
+- compileView($viewPath, $data) - View compilation with data binding
+- Template variable passing with XSS protection and auto-escaping
+
+🛡️ ENTERPRISE SECURITY FRAMEWORK:
+- generateCSRFToken() - Cryptographically secure CSRF token generation
+- validateCSRFToken($token) - CSRF token validation with timing attack protection
+- requireCSRF() - Enforce CSRF protection on sensitive operations
+- sanitizeInput($input, $type = 'string') - Multi-type input sanitization
+- validateInput($data, $rules) - Comprehensive input validation engine
+- authorizeUser($permission) - Role-based access control enforcement
+- requireLogin($redirectUrl = null) - Authentication requirement with redirect
+- requireRole($roles) - Multi-role authorization checking
+- rateLimitCheck($action, $limit = 10) - Brute force and spam protection
+- logSecurityEvent($event, $details) - Security audit logging
+
+⚡ PROFESSIONAL INPUT VALIDATION SUITE:
+- validateRequired($fields, $data) - Required field validation with custom messages
+- validateEmail($email, $domain = '@kiit.ac.in') - KIIT-specific email validation
+- validatePhone($phone) - Indian phone number format validation
+- validateDate($date, $format = 'Y-m-d') - Date format and range validation
+- validateNumeric($value, $min = null, $max = null) - Numeric validation with bounds
+- validateString($string, $minLength = 0, $maxLength = 255) - String validation
+- validateArray($array, $allowedKeys = []) - Array structure validation
+- validateFileUpload($file, $allowedTypes = [], $maxSize = null) - File upload validation
+- sanitizeOutput($data) - Output sanitization for safe rendering
+- Custom validation rule engine with extensible rule definitions
+
+🌐 HTTP RESPONSE & REDIRECT MANAGEMENT:
+- redirect($url, $permanent = false) - HTTP redirect with proper status codes
+- redirectToRoute($route, $params = []) - Named route redirects
+- redirectWithMessage($url, $message, $type = 'success') - Flash message redirects
+- redirectBack($fallback = '/') - Return to previous page with fallback
+- setStatusCode($code) - HTTP status code management
+- setHeaders($headers) - Custom HTTP header management
+- downloadFile($filePath, $filename = null) - Secure file download handling
+- jsonResponse($data, $status = 200, $headers = []) - Standardized JSON responses
+- jsonError($message, $status = 400, $errors = []) - JSON error responses
+- jsonSuccess($data = [], $message = 'Success') - JSON success responses
+
+🔐 COMPREHENSIVE SESSION MANAGEMENT:
+- startSession() - Secure session initialization with security flags
+- destroySession() - Complete session cleanup and security
+- setSession($key, $value) - Secure session data storage
+- getSession($key, $default = null) - Session data retrieval
+- unsetSession($key) - Individual session key removal
+- hasSession($key) - Session key existence checking
+- flashMessage($key, $message) - Flash message system for user feedback
+- getFlashMessage($key, $delete = true) - Flash message retrieval
+- regenerateSessionId() - Session ID regeneration for security
+- setSessionTimeout($minutes = 30) - Session timeout configuration
+
+🎓 KIIT SEVA SPECIFIC FEATURES:
+- validateKIITEmail($email) - KIIT domain email validation (@kiit.ac.in)
+- validateStudentId($id) - KIIT student ID format validation
+- validateAcademicYear($year) - Academic year validation
+- validateCampusRoute($route) - Campus route validation (15, 17, 25)
+- validateTimeSlot($timeSlot) - Academic time slot validation
+- formatKIITDate($date) - Indian date format for university displays
+- validateKIITPhone($phone) - Indian phone number validation
+- getCurrentSemester() - Academic semester detection
+- validateRollNumber($rollNo) - KIIT roll number format validation
+- getUserCampus() - Current user's campus detection
+
+🚨 ADVANCED ERROR HANDLING & LOGGING:
+- handleException($exception) - Comprehensive exception handling
+- logError($message, $context = []) - Structured error logging
+- logUserActivity($action, $details = []) - User activity audit logging
+- handleValidationErrors($errors) - Validation error processing
+- setErrorHandler() - Custom error handler registration
+- displayErrors($errors, $format = 'html') - User-friendly error display
+- isAjaxRequest() - AJAX request detection for appropriate responses
+- handleDatabaseError($error) - Database-specific error handling
+- sendErrorNotification($error, $urgent = false) - Error notification system
+- getErrorTemplate($errorCode) - Dynamic error template selection
+
+🎯 REQUEST PROCESSING UTILITIES:
+- getRequestMethod() - HTTP method detection (GET, POST, PUT, DELETE)
+- isPostRequest() - POST request validation
+- isGetRequest() - GET request validation
+- isAjaxRequest() - AJAX/XMLHttpRequest detection
+- getRequestData($method = 'POST') - Request data extraction and sanitization
+- getQueryParams() - URL query parameter processing
+- getRouteParams() - Route parameter extraction
+- getUserIP() - User IP address detection with proxy handling
+- getUserAgent() - User agent string processing
+- getReferrer() - HTTP referrer validation and processing
+
+⚡ PERFORMANCE & OPTIMIZATION:
+- enableOutputCompression() - Response compression for faster loading
+- setCacheHeaders($duration = 3600) - Browser caching optimization
+- disableCaching() - Cache prevention for sensitive pages
+- measureExecutionTime() - Performance monitoring and profiling
+- enableRateLimiting($action, $limit) - Request rate limiting
+- optimizeResponse($content) - Response optimization (minification)
+- setMemoryLimit($limit) - Memory usage optimization
+- enableDebugMode() - Development debugging tools
+- profileDatabaseQueries() - Database query performance monitoring
+- generateETag($content) - ETag generation for caching optimization
+
+🧪 DEVELOPMENT & DEBUGGING TOOLS:
+- debugMode() - Development environment detection
+- dumpAndDie($data) - Debug data dumping (development only)
+- logDebug($message, $data = []) - Debug message logging
+- getExecutionTime() - Script execution time measurement
+- getMemoryUsage() - Memory usage tracking
+- validateEnvironment() - Environment configuration validation
+- generateDebugReport() - Comprehensive debug information
+- testSecurityHeaders() - Security header validation
+- validateCSPHeaders() - Content Security Policy validation
+- checkPermissions() - File and directory permission checking
+
+📱 MOBILE & RESPONSIVE SUPPORT:
+- detectMobileDevice() - Mobile device detection
+- setMobileLayout() - Mobile-optimized layout switching
+- validateTouchInput() - Touch interface input validation
+- optimizeForMobile() - Mobile performance optimizations
+- setViewport() - Mobile viewport configuration
+- enablePWAFeatures() - Progressive Web App support
+- handleOfflineRequests() - Offline functionality support
+
+🔄 INTEGRATION CAPABILITIES:
+- integrateWithBaseModel() - Seamless BaseModel integration
+- connectToMiddleware($middleware) - Middleware system connection
+- loadHelpers($helpers = []) - Helper class loading and integration
+- validateAPIKeys() - API authentication for external integrations
+- handleWebhooks($source) - Webhook processing for third-party services
+- manageFileUploads() - File upload processing and validation
+- processFormData() - Multi-part form data handling
+
+Include comprehensive PHPDoc documentation, usage examples, security best practices, and integration patterns that align with KIIT SEVA's MVC architecture and university-level security requirements.
+
+File: app/controllers/BaseController.php
