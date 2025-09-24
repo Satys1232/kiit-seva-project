@@ -1,0 +1,522 @@
+/**
+ * KIIT SEVA - Responsive Design Styles
+ * Mobile-first responsive design with professional breakpoints
+ */
+
+/* Mobile First Base Styles (< 576px) */
+/* Base styles are already mobile-optimized in app.css */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-actions {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+    
+    /* Show desktop navigation */
+    .navbar-nav.desktop-nav {
+        display: flex;
+    }
+    
+    .mobile-menu-toggle {
+        display: none;
+    }
+    
+    .mobile-nav {
+        display: none !important;
+    }
+    
+    /* Hero section improvements */
+    .hero {
+        padding: 5rem 0;
+    }
+    
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    /* Grid improvements */
+    .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    /* Card improvements */
+    .service-card {
+        padding: 2rem;
+    }
+    
+    /* Form improvements */
+    .form-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+    
+    /* Footer improvements */
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-bottom-content {
+        flex-direction: row;
+        text-align: left;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    /* Enhanced hero section */
+    .hero {
+        padding: 6rem 0;
+    }
+    
+    .hero h1 {
+        font-size: 4rem;
+    }
+    
+    /* Grid system enhancements */
+    .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Enhanced service cards */
+    .service-card {
+        padding: 2.5rem;
+    }
+    
+    .service-card:hover {
+        transform: translateY(-10px);
+    }
+    
+    /* Dashboard layouts */
+    .dashboard-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-xl);
+    }
+    
+    .dashboard-main {
+        grid-column: span 2;
+    }
+    
+    .dashboard-sidebar {
+        grid-column: span 1;
+    }
+    
+    /* Enhanced footer */
+    .footer-content {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    /* Table responsiveness */
+    .table-responsive {
+        overflow-x: visible;
+    }
+    
+    /* Modal improvements */
+    .modal-dialog {
+        max-width: 600px;
+        margin: 3rem auto;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+    
+    /* Maximum hero impact */
+    .hero {
+        padding: 8rem 0;
+    }
+    
+    .hero h1 {
+        font-size: 4.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.75rem;
+    }
+    
+    /* Enhanced spacing */
+    .services {
+        padding: 6rem 0;
+    }
+    
+    .stats {
+        padding: 4rem 0;
+    }
+    
+    /* Large screen optimizations */
+    .service-card {
+        padding: 3rem;
+    }
+    
+    /* Enhanced dashboard for large screens */
+    .dashboard-container {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        min-height: calc(100vh - 70px);
+    }
+    
+    .dashboard-sidebar {
+        background: var(--white);
+        border-right: 1px solid var(--medium-gray);
+        padding: var(--spacing-xl);
+    }
+    
+    .dashboard-main {
+        padding: var(--spacing-xl);
+        overflow-y: auto;
+    }
+    
+    /* Enhanced forms for large screens */
+    .form-row-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-md);
+    }
+    
+    .form-row-4 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-md);
+    }
+}
+
+/* Extra extra large devices (1400px and up) */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    /* Maximum container width reached */
+    .hero-content {
+        max-width: 900px;
+    }
+    
+    /* Enhanced service grid for very large screens */
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+    
+    /* Enhanced dashboard sidebar */
+    .dashboard-container {
+        grid-template-columns: 320px 1fr;
+    }
+}
+
+/* Landscape orientation optimizations */
+@media (orientation: landscape) and (max-height: 600px) {
+    .hero {
+        padding: 3rem 0;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .services,
+    .stats {
+        padding: 3rem 0;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .logo,
+    .service-icon {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets */
+    .btn {
+        min-height: 44px;
+        padding: 12px 20px;
+    }
+    
+    .nav-link {
+        padding: 12px 16px;
+    }
+    
+    .form-control {
+        padding: 16px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    /* Remove hover effects on touch devices */
+    .card:hover,
+    .service-card:hover,
+    .btn:hover {
+        transform: none;
+    }
+    
+    /* Enhanced mobile interactions */
+    .mobile-nav-link {
+        padding: 16px 20px;
+        font-size: 1.125rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    /* Hide non-essential elements */
+    .navbar,
+    .footer,
+    .back-to-top,
+    .mobile-menu-toggle,
+    .user-dropdown,
+    .auth-buttons {
+        display: none !important;
+    }
+    
+    /* Optimize for print */
+    body {
+        background: white !important;
+        color: black !important;
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+    
+    .container {
+        max-width: none;
+        padding: 0;
+    }
+    
+    .hero {
+        background: none !important;
+        color: black !important;
+        padding: 1rem 0;
+    }
+    
+    .card,
+    .service-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        break-inside: avoid;
+        margin-bottom: 1rem;
+    }
+    
+    /* Page breaks */
+    .services,
+    .stats {
+        page-break-inside: avoid;
+    }
+    
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+    
+    /* Links */
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+    
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .hero {
+        animation: none;
+    }
+    
+    .card:hover,
+    .service-card:hover,
+    .btn:hover {
+        transform: none;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-blue: #0066cc;
+        --text-secondary: #000000;
+        --medium-gray: #666666;
+        --light-gray: #cccccc;
+    }
+    
+    .card,
+    .service-card {
+        border: 2px solid #000000;
+    }
+    
+    .btn {
+        border-width: 2px;
+    }
+    
+    .form-control {
+        border-width: 2px;
+    }
+}
+
+/* Dark mode support (future enhancement) */
+@media (prefers-color-scheme: dark) {
+    /* This can be implemented later for dark mode support */
+    /*
+    :root {
+        --bg-primary: #1a1a1a;
+        --bg-secondary: #2d2d2d;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+    }
+    */
+}
+
+/* Container queries (future enhancement) */
+/* When container queries are widely supported, we can add:
+@container (min-width: 400px) {
+    .service-card {
+        padding: 2rem;
+    }
+}
+*/
+
+/* Specific component responsive behaviors */
+
+/* Navigation responsive behavior */
+@media (max-width: 991px) {
+    .navbar-nav.desktop-nav {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+    }
+}
+
+/* Dashboard responsive behavior */
+@media (max-width: 1199px) {
+    .dashboard-container {
+        display: block;
+    }
+    
+    .dashboard-sidebar {
+        display: none;
+    }
+}
+
+/* Form responsive behavior */
+@media (max-width: 767px) {
+    .form-row,
+    .form-row-3,
+    .form-row-4 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Table responsive behavior */
+@media (max-width: 991px) {
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .table {
+        min-width: 600px;
+    }
+}
+
+/* Modal responsive behavior */
+@media (max-width: 767px) {
+    .modal-dialog {
+        margin: 1rem;
+        max-width: calc(100% - 2rem);
+    }
+}
+
+/* Stats section responsive behavior */
+@media (max-width: 575px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .stat-item {
+        padding: var(--spacing-md);
+    }
+}
+
+/* Service cards responsive behavior */
+@media (max-width: 575px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .service-card {
+        padding: var(--spacing-lg);
+        margin: 0 var(--spacing-sm);
+    }
+}
