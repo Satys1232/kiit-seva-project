@@ -1,0 +1,1 @@
+<?php echo "KIIT SEVA Test - PHP is working!"; ?>
